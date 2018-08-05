@@ -11,7 +11,8 @@
 
 // Color gradient
 @mixin gradient($color1, $color2) {
-	background: -webkit-linear-gradient($color1, $color2);
+	background: linear-gradient(to right, $color1, $color2);
+	// background: -webkit-linear-gradient(to right, $color1, $color2);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

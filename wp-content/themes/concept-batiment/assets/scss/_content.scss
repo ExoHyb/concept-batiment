@@ -6,8 +6,8 @@ html {
 body {
 	cursor: default;
 	font-size: inherit;
-	//-webkit-font-smoothing: antialiased;
-	//-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 // text selection
@@ -22,6 +22,7 @@ body {
 	font-weight: $headings-font-weight;
 	color: $headings-color;
 	text-transform: uppercase;
+	color: $secondary;
 	a {
 		display: block;
 		color: inherit;
@@ -68,10 +69,6 @@ h6,
 	letter-spacing: 0.39em;
 	text-transform: uppercase;
 }
-
-
-
-#wrap { padding-top: 2em; }
 
 
 

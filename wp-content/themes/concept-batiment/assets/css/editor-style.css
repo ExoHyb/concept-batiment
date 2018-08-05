@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6,
   color: inherit; }
 
 h1, .h1 {
-  font-size: 4.5rem; }
+  font-size: 2.5rem; }
 
 h2, .h2 {
   font-size: 1.5rem; }
@@ -4971,7 +4971,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   cursor: default;
-  font-size: inherit; }
+  font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 ::selection {
   background: #6c757d;
@@ -4987,7 +4989,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: inherit;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #2B2B2B; }
   .title a {
     display: block;
     color: inherit; }
@@ -4996,7 +4999,7 @@ h1, .h1 {
   letter-spacing: 0.17em; }
   h1.gradient-h1,
   .h1.gradient-h1 {
-    background: -webkit-linear-gradient(#ff6b4b, #ff4479);
+    background: linear-gradient(to right, #ff6b4b, #ff4479);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
@@ -5005,7 +5008,7 @@ h2, .h2 {
   text-transform: uppercase; }
   h2.gradient-h2,
   .h2.gradient-h2 {
-    background: -webkit-linear-gradient(#ff6b4b, #ff4479);
+    background: linear-gradient(to right, #ff6b4b, #ff4479);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
@@ -5014,7 +5017,7 @@ h3, .h3 {
   text-transform: uppercase; }
   h3.gradient-h3,
   .h3.gradient-h3 {
-    background: -webkit-linear-gradient(#ff6b4b, #ff4479);
+    background: linear-gradient(to right, #ff6b4b, #ff4479);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
@@ -5029,9 +5032,6 @@ h5, .h5 {
 h6, .h6 {
   letter-spacing: 0.39em;
   text-transform: uppercase; }
-
-#wrap {
-  padding-top: 2em; }
 
 img,
 .wp-caption {

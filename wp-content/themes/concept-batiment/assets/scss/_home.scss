@@ -1,0 +1,75 @@
+.header-home {
+    background: $secondary;
+    box-shadow: 900px 0 0 $secondary, -900px 0 0 $secondary;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    overflow-y: hidden;
+    &:before {
+        content: '';
+        background: #FFF;
+        width: 50%;
+        height: 82%;
+        position: absolute;
+        left: 12px;
+        top: 0;
+        z-index: 3;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($secondary, 0.7);
+        z-index: 1;
+    }
+    .image-gray {
+        filter: grayscale(1);
+        position: absolute;
+        top: 50px;
+        right: 0;
+        z-index: 0;
+        pointer-events: none;
+        width: 70%;
+        max-height: 100%;
+        object-fit: cover;
+        object-position: right bottom;
+    }
+    .primary-image {
+        position: absolute;
+        top: 20px;
+        left: 130px;
+        max-width: 70%;
+        object-fit: cover;
+        z-index: 5;
+        pointer-events: none;
+        transform: scaleX(-1);
+        filter: brightness(1.1);
+    }
+    .wrapper-content {
+        position: absolute;
+        top: 40%;
+        left: 30px;
+        z-index: 10;
+        max-width: 40%;
+        h1 {
+            font-size: 2.6rem;
+            position: relative;
+            padding-bottom: .3em;
+            margin-bottom: .6em;
+            &:after {
+                content: '';
+                background: $secondary;
+                height: 2px;
+                width: 120px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+}
