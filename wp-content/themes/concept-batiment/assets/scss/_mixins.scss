@@ -1,0 +1,111 @@
+
+//	Responsive ratio item
+//	example:
+//	.video-4-3 {
+//		@include tw_ratio(4/3);
+//	}
+
+@mixin tw_ratio($ratio) {
+	padding-bottom: unquote(floor(100 * (1/$ratio)) + '%');
+}
+
+// Color gradient
+@mixin gradient($color1, $color2) {
+	background: -webkit-linear-gradient($color1, $color2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+//	placeholder with focus
+//  example:
+//  input {
+//  	@include tw_placeholder();
+//  }
+
+@mixin tw_placeholder($color: $input-placeholder-color, $color-hover: rgba($input-placeholder-color, 0.4)) {
+	&:-ms-input-placeholder       { color: $color; }
+	&::-webkit-input-placeholder  { color: $color; }
+	&::placeholder                { color: $color; opacity: 1; }
+	&:focus:-ms-input-placeholder       { color: $color-hover; }
+	&:focus::-webkit-input-placeholder  { color: $color-hover; }
+	&:focus::placeholder                { color: $color-hover; }
+}
+
+
+
+//	Vertical align anything
+//	example:
+//	.my-container {
+//		@include tw_vertical-align-inside();
+//	}
+
+@mixin tw_vertical-align-inside($pos: 50%) {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	> * {
+		position: relative;
+		display: block;
+		top: $pos;
+		-webkit-transform: translateY(-$pos);
+		-ms-transform: translateY(-$pos);
+		transform: translateY(-$pos);
+	}
+}
+
+
+
+//	Responsive everything
+//	ex :
+//	#test {
+//		@include tw_responsive(font-size, false, 0.8rem, 0.9rem, 1rem, 1.1rem);
+//	}
+//  xs, lg and xl are optional.
+
+@mixin tw_responsive($prop, $xs, $sm, $md, $lg: false, $xl: false) {
+
+	@if $xs {
+		@include media-breakpoint-only(xs) {
+			#{$prop}: $xs;
+		}
+		@include media-breakpoint-only(sm) {
+			#{$prop}: $sm;
+		}
+	} @else {
+		@include media-breakpoint-down(sm) {
+			#{$prop}: $sm;
+		}
+	}
+
+	@if $lg and $xl {
+		@include media-breakpoint-only(md) {
+			#{$prop}: $md;
+		}
+		@include media-breakpoint-only(lg) {
+			#{$prop}: $lg;
+		}
+		@include media-breakpoint-up(xl) {
+			#{$prop}: $xl;
+		}
+	}
+	@if $lg and not($xl) {
+		@include media-breakpoint-only(md) {
+			#{$prop}: $md;
+		}
+		@include media-breakpoint-up(lg) {
+			#{$prop}: $lg;
+		}
+	}
+	@if not($lg) and $xl {
+		@include media-breakpoint-only(md) {
+			#{$prop}: $md;
+		}
+		@include media-breakpoint-up(xl) {
+			#{$prop}: $xl;
+		}
+	}
+	@if not($lg) and not($xl) {
+		@include media-breakpoint-up(md) {
+			#{$prop}: $md;
+		}
+	}
+}

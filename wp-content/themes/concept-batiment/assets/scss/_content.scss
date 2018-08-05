@@ -1,0 +1,236 @@
+
+html {
+	@include tw_responsive(font-size, $font-size-base - 0.15rem, $font-size-base - 0.1rem, $font-size-base - 0.05rem, $font-size-base);
+}
+
+body {
+	cursor: default;
+	font-size: inherit;
+	//-webkit-font-smoothing: antialiased;
+	//-moz-osx-font-smoothing: grayscale;
+}
+
+// text selection
+::selection { background: $gray-600; color: #FFF; }
+::-moz-selection { background: $gray-600; color: #FFF; }
+
+// like Hn
+.title {
+	display: block;
+	margin: 0;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	color: $headings-color;
+	text-transform: uppercase;
+	a {
+		display: block;
+		color: inherit;
+	}
+}
+
+
+
+h1,
+.h1 {
+	letter-spacing: 0.17em;
+	&.gradient-h1 {
+		@include gradient($primary, $tier);
+	}
+}
+h2,
+.h2 {
+	letter-spacing: 0.39em;
+	text-transform: uppercase;
+	&.gradient-h2 {
+		@include gradient($primary, $tier);
+	}
+}
+h3,
+.h3 {
+	letter-spacing: 0.39em;
+	text-transform: uppercase;
+	&.gradient-h3 {
+		@include gradient($primary, $tier);
+	}
+}
+h4,
+.h4 {
+	letter-spacing: 0.39em;
+	text-transform: uppercase;
+}
+h5,
+.h5 {
+	letter-spacing: 0.39em;
+	text-transform: uppercase;
+}
+h6,
+.h6 {
+	letter-spacing: 0.39em;
+	text-transform: uppercase;
+}
+
+
+
+#wrap { padding-top: 2em; }
+
+
+
+// responsive images
+img,
+.wp-caption { max-width: 100%; height: auto; }
+
+
+
+// Facebook placeholder
+#fb-root { display: none; }
+
+
+
+.entry-header {
+	padding-bottom: 1em;
+}
+
+
+
+[data-link] {
+	cursor: pointer;
+}
+
+
+
+.thumb {
+	text-decoration: none;
+	display: block;
+	padding-bottom: .8em;
+}
+
+
+
+.post { padding-bottom: 2em; }
+
+
+
+.entry-content {
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	.read-more { display: block; text-align: right; }
+
+	table {
+		@extend .table;
+	}
+
+	iframe { max-width: 100%!important; }
+
+}
+
+
+
+// WordPress classes
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 20px 5px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 5px 20px;
+}
+
+figure.alignnone {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.sticky {  }
+.bypostauthor {  }
+.wp-caption {  }
+.wp-caption-text {
+	text-align: center;
+	font-size: $font-size-sm;
+	padding-top: 0.2em;
+	color: $gray-500;
+	a {
+		color: inherit;
+		text-decoration: underline;
+		&:hover { color: $gray-400; }
+	}
+}
+
+.screen-reader-text {
+	@extend .sr-only;
+}
+
+
+
+// Google map : max-width bug fix
+#map_canvas img,
+.gmnoprint img,
+.gm-style img { max-width: none; }
+
+
+
+// paginated article
+.page-nav {
+	border-top: 1px solid $gray-200;
+	padding-top: 5px;
+	font-size: .9em;
+	color: $gray-400;
+}
+
+
+
+.gallery {
+	@extend .clearfix;
+	margin: 0 (-($grid-gutter-width / 4));
+	padding: ($grid-gutter-width / 4) 0;
+}
+.gallery-item {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+	padding-bottom: $grid-gutter-width / 2;
+	margin: 0;
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			$w: floor(10000/$i)/100;
+			max-width: unquote($w + '%');
+		}
+	}
+	a {
+		display: block;
+		padding: 0 ($grid-gutter-width / 4);
+	}
+}
+
+
+
+// Twoobl placeholders
+input,
+textarea {
+	@include tw_placeholder();
+}
+
+
+
+// emojis style
+img.wp-smiley,
+img.emoji {
+	display: inline;
+	border: none;
+	box-shadow: none;
+	height: 1em;
+	width: 1em;
+	margin: 0 .07em;
+	vertical-align: -0.1em;
+	background: none;
+	padding: 0;
+}
