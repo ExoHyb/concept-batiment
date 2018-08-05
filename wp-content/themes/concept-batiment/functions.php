@@ -12,7 +12,7 @@ define('_ISOLANG_', substr(get_bloginfo('language'), 0, 2));
 require_once locate_template('lib/scripts.php');
 require_once locate_template('lib/widgets.php');
 require_once locate_template('lib/shortcodes.php');
-//require_once locate_template('lib/acf-init.php');
+require_once locate_template('lib/acf-init.php');
 require_once locate_template('lib/tinymce.php');
 require_once locate_template('lib/siteaccesschecker.php');
 require_once locate_template('lib/twoobl.php');
