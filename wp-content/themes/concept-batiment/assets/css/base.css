@@ -6228,13 +6228,14 @@ header {
     position: absolute;
     right: 0;
     top: 18px;
-    width: 40;
-    height: 40px; }
+    width: 40px;
+    height: 40px;
+    cursor: pointer; }
     header .hamburger span {
       position: absolute;
       background-color: #FFF;
       height: 2px;
-      width: 28px;
+      width: 25px;
       border-radius: 5px;
       right: 0; }
       header .hamburger span:nth-child(1) {
@@ -6245,6 +6246,17 @@ header {
       header .hamburger span:nth-child(3) {
         top: 12px;
         width: 20px; }
+    header .hamburger.active span {
+      background-color: red; }
+      header .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 5px; }
+      header .hamburger.active span:nth-child(2) {
+        display: none; }
+      header .hamburger.active span:nth-child(3) {
+        width: 25px;
+        transform: rotate(-45deg);
+        top: 5px; }
 
 @media (max-width: 575.98px) {
   html {
