@@ -69,6 +69,14 @@
 				<span></span>
 				<span></span>
 			</div>
+			<div id="primary-menu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Nos prestations</a></li>
+					<li><a href="#">Inspirations</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
 		</div>
 	</header>
 

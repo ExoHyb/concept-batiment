@@ -5039,7 +5039,7 @@
 
 		// Animation hamburger
 		$('.hamburger').click(function() {
-			$(this).toggleClass('active');
+			$(this).toggleClass('active').parent().find('#primary-menu').slideToggle('medium');
 		});
 
 		// Slick inspiration homepage
