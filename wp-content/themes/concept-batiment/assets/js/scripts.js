@@ -5037,6 +5037,11 @@
 		var height = img.clientHeight + 70;
 		$('.header-home').css('height', + height +'px');
 
+		// Animation hamburger
+		$('.hamburger').click(function() {
+			$(this).toggleClass('active');
+		});
+
 		// Slick inspiration homepage
 		$('.wrapper-inspirations').slick({
 			dots: false,
