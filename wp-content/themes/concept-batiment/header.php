@@ -72,4 +72,4 @@
 		}
 		?>
 
-		<div class="container" role="document">
+		<div role="document">

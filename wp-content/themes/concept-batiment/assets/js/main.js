@@ -10,10 +10,27 @@
 		// $('.primary-image').css('max-height', + maxHeight +'px');
 
 		var img = document.getElementById('heightimage');
-		console.log(img);
 		var height = img.clientHeight + 70;
-		console.log(height);
 		$('.header-home').css('height', + height +'px');
+
+		// Slick inspiration homepage
+		$('.wrapper-inspirations').slick({
+			dots: false,
+			speed: 500,
+			infinite: false,
+			arrows: true,
+			prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
+            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
+		});
+
+		// Slick clients homepage
+		$('.wrapper-clients').slick({
+			dots: false,
+			arrows: true,
+			prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
+            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
+			speed: 500,
+		});
 
 		/********************************************
 		 * 		Mmenu navigation menu

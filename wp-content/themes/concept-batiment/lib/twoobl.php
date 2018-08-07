@@ -2,10 +2,10 @@
 
 if( !function_exists( 'twoobl_setup' ) ) {
 	function twoobl_setup() {
-			
+
 		// Load text domain
 		load_theme_textdomain('twoobl', get_template_directory().'/lang');
-		
+
 		// Custom menus
 		register_nav_menus( array(
 			'primary_nav' => __('Primary navigation', 'twoobl')
@@ -16,7 +16,7 @@ if( !function_exists( 'twoobl_setup' ) ) {
 		add_theme_support('automatic-feed-links');
 		add_theme_support('post-thumbnails');
 		add_theme_support('custom-background');
-		
+
 		// Add theme support for Semantic Markup
 		$HTML5markup = array(
 			'comment-list',
@@ -39,7 +39,7 @@ add_action('after_setup_theme', 'twoobl_setup');
  * 		Custom excerpt
  ********************************************/
 function twoobl_excerpt_length( $length ) {
-	return 80;
+	return 15;
 }
 add_filter( 'excerpt_length', 'twoobl_excerpt_length', 999 );
 
@@ -86,11 +86,11 @@ if( !function_exists( 'twoobl_show_image_sizes' ) ) {
 	function twoobl_show_image_sizes( $sizes ) {
 		$new_sizes = array();
 		$added_sizes = get_intermediate_image_sizes();
-		
+
 		foreach( $added_sizes as $key => $value) {
 			$new_sizes[$value] = $value;
 		}
-	
+
 		$new_sizes = array_merge($new_sizes, $sizes);
 		return $new_sizes;
 	}
@@ -347,21 +347,21 @@ add_filter('wp_revisions_to_keep', 'twoobl_limit_rev_pages_and_posts', 10, 2);
 if( !function_exists( 'twoobl_like_twentytwelve_wp_title' ) ) {
 	function twoobl_like_twentytwelve_wp_title($title, $sep) {
 		global $paged, $page;
-	
+
 		if ( is_feed() )
 			return $title;
-	
+
 		$title .= get_bloginfo( 'name' );
-	
+
 		// Add the site description for the home/front page.
 		$site_description = get_bloginfo('description', 'display');
 		if ( $site_description && (is_home() || is_front_page()) )
 			$title = "$title $sep $site_description";
-	
+
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
 			$title = "$title $sep " . sprintf( __('Page %s', 'twoobl'), max( $paged, $page ) );
-	
+
 		return $title;
 	}
 }
@@ -445,9 +445,9 @@ add_action('wp_head', 'twoobl_fb_like_thumbnails');
  **********************************************************************************/
 if( !function_exists( 'twoobl_contact_info' ) ) {
 	function twoobl_contact_info($contacts) {
-		unset($contacts['aim']);  
+		unset($contacts['aim']);
 		unset($contacts['yim']);
-		unset($contacts['jabber']);  
+		unset($contacts['jabber']);
 		$contacts['contact_google'] = __('Google+ URL', 'twoobl');
 		$contacts['contact_facebook'] = __('Facebook URL', 'twoobl');
 		$contacts['contact_twitter'] = __('Twitter profile', 'twoobl');
@@ -470,7 +470,7 @@ if( !function_exists( 'get_twoobl_prevnext' ) ) {
 		global $post;
 		$prev_post = get_adjacent_post();
 		$next_post = get_adjacent_post(false, '', false);
-		
+
 		if( !$prev_post && !$next_post )
 			return;
 
@@ -480,7 +480,7 @@ if( !function_exists( 'get_twoobl_prevnext' ) ) {
 			if( $next_post )
 				$prevnext .= '<div class="col-xs-6 text-right"><a data-toggle="tooltip" class="btn btn-default btn-sm" href="'.get_permalink($next_post).'" title="'.esc_attr($next_post->post_title).'">'.__('Newer posts &rarr;', 'twoobl').'</a></div>';
 		$prevnext .= '</nav>';
-		
+
 		return $prevnext;
 	}
 }
