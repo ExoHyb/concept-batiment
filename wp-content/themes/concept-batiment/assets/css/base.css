@@ -6623,9 +6623,11 @@ img.emoji {
       right: 20px;
       top: 20px;
       z-index: 20;
-      cursor: pointer; }
+      cursor: pointer;
+      background: url(../img/right.svg); }
       .inspirations .wrapper-inspirations .slickArrow.slickArrow-prev {
-        right: 53px; }
+        right: 53px;
+        background: url(../img/left.svg); }
     .inspirations .wrapper-inspirations .item-inspiration {
       position: relative; }
       .inspirations .wrapper-inspirations .item-inspiration:before {

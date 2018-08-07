@@ -104,8 +104,10 @@
             top: 20px;
             z-index: 20;
             cursor: pointer;
+            background: url(../img/right.svg);
             &.slickArrow-prev {
                 right: 53px;
+                background: url(../img/left.svg);
             }
         }
         .item-inspiration {
