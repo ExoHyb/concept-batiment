@@ -6218,6 +6218,34 @@ a.text-dark:hover, a.text-dark:focus {
       #nav-main > div > ul > li:hover > ul {
         display: block; }
 
+header {
+  position: relative;
+  height: 40px;
+  z-index: 40; }
+  header .container {
+    position: relative; }
+  header .hamburger {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    width: 40;
+    height: 40px; }
+    header .hamburger span {
+      position: absolute;
+      background-color: #FFF;
+      height: 2px;
+      width: 28px;
+      border-radius: 5px;
+      right: 0; }
+      header .hamburger span:nth-child(1) {
+        top: 0; }
+      header .hamburger span:nth-child(2) {
+        top: 6px;
+        width: 15px; }
+      header .hamburger span:nth-child(3) {
+        top: 12px;
+        width: 20px; }
+
 @media (max-width: 575.98px) {
   html {
     font-size: 0.85rem; } }
@@ -6470,7 +6498,8 @@ img.emoji {
   padding-top: 2rem;
   padding-bottom: 2rem;
   position: relative;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  margin-top: -40px; }
   .header-home:before {
     content: '';
     background: #FFF;
