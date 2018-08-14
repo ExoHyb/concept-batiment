@@ -92,9 +92,13 @@ $primaryImage = get_field('first-image', 'option');
 							foreach ($urls as $url) {
 								if ($url == get_permalink()) {
 									echo '<article class="item-prestation">';
-										the_post_thumbnail();
-										echo '<h2>' . get_the_title() . '</h2>';
-										echo the_excerpt();
+										echo '<a href="' . get_the_permalink() . '">';
+											echo '<div class="wrapper-image">';
+												the_post_thumbnail();
+											echo '</div>';
+											echo '<h2>' . get_the_title() . '</h2>';
+											echo the_excerpt();
+										echo '</a>';
 									echo '</article>';
 								}
 							}
