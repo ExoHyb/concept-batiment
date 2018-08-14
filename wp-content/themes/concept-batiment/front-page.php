@@ -80,7 +80,32 @@ $primaryImage = get_field('first-image', 'option');
 			?>
 		</div>
 	</section>
-
+	<section class="prestations">
+		<div class="container">
+			<div class="wrapper-prestations">
+				<?php
+				$the_query = new WP_Query( array('post_type' => 'page', 'posts_per_page' => -1));
+				$urls = get_field('prestations', 'options');
+				if ( $the_query->have_posts() ) {
+					while ( $the_query->have_posts() ) : $the_query->the_post();
+						if ($urls) {
+							foreach ($urls as $url) {
+								if ($url == get_permalink()) {
+									echo '<article class="item-prestation">';
+										the_post_thumbnail();
+										echo '<h2>' . get_the_title() . '</h2>';
+										echo the_excerpt();
+									echo '</article>';
+								}
+							}
+						}
+					endwhile;
+				}
+				wp_reset_postdata();
+				?>
+			</div>
+		</div>
+	</section>
 </div>
 
 <?php
