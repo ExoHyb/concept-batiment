@@ -82,6 +82,7 @@ $primaryImage = get_field('first-image', 'option');
 	</section>
 	<section class="prestations">
 		<div class="container">
+			<h2 class="title"><?php _e('Nos prestations', 'twoobl'); ?></h2>
 			<div class="wrapper-prestations">
 				<?php
 				$the_query = new WP_Query( array('post_type' => 'page', 'posts_per_page' => -1));

@@ -238,6 +238,7 @@
     color: $gray-500;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    position: relative;
     .h1 {
         color: $gray-100;
         margin-bottom: 20px;
@@ -283,6 +284,34 @@
 }
 
 .prestations {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &:before {
+        content: '';
+        background: $secondary;
+        height: 180px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    &:after {
+        content: '';
+        background: $secondary;
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .title {
+        color: #FFF;
+        position: relative;
+        z-index: 5;
+        margin: 20px;
+    }
     .wrapper-prestations {
         display: flex;
         .item-prestation {
@@ -309,6 +338,7 @@
                     height: 100%;
                     object-fit: cover;
                     filter: grayscale(1);
+                    transition-duration: .3s;
                 }
             }
             a {
@@ -323,6 +353,13 @@
             }
             p {
                 font-size: .9rem;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                img {
+                    filter: grayscale(0);
+                }
             }
         }
     }

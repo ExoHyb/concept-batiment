@@ -6748,7 +6748,8 @@ img.emoji {
   background-color: #2B2B2B;
   color: #adb5bd;
   padding-top: 4rem;
-  padding-bottom: 4rem; }
+  padding-bottom: 4rem;
+  position: relative; }
   .clients .h1 {
     color: #f8f9fa;
     margin-bottom: 20px; }
@@ -6785,40 +6786,69 @@ img.emoji {
     .clients .saflex img {
       max-width: 150px; }
 
-.prestations .wrapper-prestations {
-  display: flex; }
-  .prestations .wrapper-prestations .item-prestation {
-    width: 33.33%;
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px; }
-    .prestations .wrapper-prestations .item-prestation .wrapper-image {
-      position: relative; }
-      .prestations .wrapper-prestations .item-prestation .wrapper-image:before {
-        content: '';
-        background: linear-gradient(to top, #FFF, transparent, transparent);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1; }
-      .prestations .wrapper-prestations .item-prestation .wrapper-image img {
-        max-height: 350px;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(1); }
-    .prestations .wrapper-prestations .item-prestation a {
-      color: #2B2B2B;
-      text-decoration: none; }
-    .prestations .wrapper-prestations .item-prestation .read-more, .prestations .wrapper-prestations .item-prestation .btn, .prestations .wrapper-prestations .item-prestation .search-form .search-submit, .search-form .prestations .wrapper-prestations .item-prestation .search-submit {
-      display: none !important; }
-    .prestations .wrapper-prestations .item-prestation h2 {
-      font-size: 1rem; }
-    .prestations .wrapper-prestations .item-prestation p {
-      font-size: .9rem; }
+.prestations {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  .prestations:before {
+    content: '';
+    background: #2B2B2B;
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; }
+  .prestations:after {
+    content: '';
+    background: #2B2B2B;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .prestations .title {
+    color: #FFF;
+    position: relative;
+    z-index: 5;
+    margin: 20px; }
+  .prestations .wrapper-prestations {
+    display: flex; }
+    .prestations .wrapper-prestations .item-prestation {
+      width: 33.33%;
+      text-align: center;
+      padding-left: 5px;
+      padding-right: 5px; }
+      .prestations .wrapper-prestations .item-prestation .wrapper-image {
+        position: relative; }
+        .prestations .wrapper-prestations .item-prestation .wrapper-image:before {
+          content: '';
+          background: linear-gradient(to top, #FFF, transparent, transparent);
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1; }
+        .prestations .wrapper-prestations .item-prestation .wrapper-image img {
+          max-height: 350px;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(1);
+          transition-duration: .3s; }
+      .prestations .wrapper-prestations .item-prestation a {
+        color: #2B2B2B;
+        text-decoration: none; }
+      .prestations .wrapper-prestations .item-prestation .read-more, .prestations .wrapper-prestations .item-prestation .btn, .prestations .wrapper-prestations .item-prestation .search-form .search-submit, .search-form .prestations .wrapper-prestations .item-prestation .search-submit {
+        display: none !important; }
+      .prestations .wrapper-prestations .item-prestation h2 {
+        font-size: 1rem; }
+      .prestations .wrapper-prestations .item-prestation p {
+        font-size: .9rem; }
+      .prestations .wrapper-prestations .item-prestation:hover img, .prestations .wrapper-prestations .item-prestation:active img, .prestations .wrapper-prestations .item-prestation:focus img {
+        filter: grayscale(0); }
 
 .search-form label,
 .search-form input {
