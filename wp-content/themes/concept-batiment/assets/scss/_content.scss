@@ -10,6 +10,27 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+#playground {
+	position: relative;
+	&:before,
+	&:after {
+		content: '';
+		width: 20px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 20;
+	}
+	&:before {
+		background: #FFF;
+		left: 0;
+	}
+	&:after {
+		background: $secondary;
+		right: 0;
+	}
+}
+
 // text selection
 ::selection { background: $gray-600; color: #FFF; }
 ::-moz-selection { background: $gray-600; color: #FFF; }

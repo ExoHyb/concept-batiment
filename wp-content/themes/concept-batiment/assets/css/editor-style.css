@@ -4975,6 +4975,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+#playground {
+  position: relative; }
+  #playground:before, #playground:after {
+    content: '';
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 20; }
+  #playground:before {
+    background: #FFF;
+    left: 0; }
+  #playground:after {
+    background: #2B2B2B;
+    right: 0; }
+
 ::selection {
   background: #6c757d;
   color: #FFF; }
