@@ -1,0 +1,27 @@
+.page-template-page-prestation {
+    .main-header {
+        position: relative;
+        height: 250px;
+        background-size: cover !important;
+        background-position: center !important;
+        &:before {
+            content: '';
+            background-color: rgba(#FFF, 0.5);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+        }
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+            z-index: 15;
+        }
+    }
+}
