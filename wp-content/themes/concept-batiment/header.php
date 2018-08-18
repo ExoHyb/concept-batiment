@@ -9,6 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="playground">
 
 	<div id="mobile-top" class="d-block d-sm-none">
@@ -28,23 +29,40 @@
 			</div>
 		</div>
 	</div>
-	<header class="header-home-desktop">
-		<div class="container">
-			<div class="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
+
+	<?php if (is_front_page() == true): ?>
+		<header class="header-home-desktop">
+			<div class="container">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div id="primary-menu">
+					<?php
+					if( has_nav_menu('primary_nav') )
+						wp_nav_menu(array('theme_location' => 'primary_nav', 'container' => false, 'menu_class' => ''));
+					?>
+				</div>
 			</div>
-			<div id="primary-menu">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Nos prestations</a></li>
-					<li><a href="#">Inspirations</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+		</header>
+	<?php else: ?>
+		<header class="header-other">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<p class="title"><?php _e('Concept Bâtiment', 'twoobl'); ?></p>
+					</div>
+					<div class="col-sm-9">
+						<?php
+						if( has_nav_menu('primary_nav') )
+							wp_nav_menu(array('theme_location' => 'primary_nav', 'container' => false, 'menu_class' => ''));
+						?>
+					</div>
+				</div>
 			</div>
-		</div>
-	</header>
+		</header>
+	<?php endif; ?>
 
 	<div id="wrap">
 

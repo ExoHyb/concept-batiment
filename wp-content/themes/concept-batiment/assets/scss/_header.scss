@@ -287,3 +287,29 @@ header.header-home-desktop {
 		}
 	}
 }
+
+.header-other {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: right;
+		li {
+			&:not(first-child) {
+				margin-left: 20px;
+			}
+			display: inline-block;
+			.sub-menu {
+				display: none;
+			}
+			a {
+				text-transform: uppercase;
+				color: $secondary;
+				font-size: .8rem;
+				font-weight: $font-weight-bold;
+			}
+		}
+	}
+}

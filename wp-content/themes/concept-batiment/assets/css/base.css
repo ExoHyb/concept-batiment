@@ -6284,6 +6284,26 @@ header.header-home-desktop {
           text-decoration: none;
           margin-right: 3px; }
 
+.header-other {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .header-other ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; }
+    .header-other ul li {
+      display: inline-block; }
+      .header-other ul li:not(first-child) {
+        margin-left: 20px; }
+      .header-other ul li .sub-menu {
+        display: none; }
+      .header-other ul li a {
+        text-transform: uppercase;
+        color: #2B2B2B;
+        font-size: .8rem;
+        font-weight: 700; }
+
 @media (max-width: 575.98px) {
   html {
     font-size: 0.85rem; } }
@@ -7926,6 +7946,29 @@ body.modal-open .mm-slideout {
 /* .gform_button {
 	@extend .btn, .btn-primary;
 }*/
+.page-template-page-prestation .main-header {
+  position: relative;
+  height: 250px;
+  background-size: cover !important;
+  background-position: center !important; }
+  .page-template-page-prestation .main-header:before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10; }
+  .page-template-page-prestation .main-header .title {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 15; }
+
 @media (max-width: 575.98px) {
   html[lang] {
     margin-top: 0 !important; }
