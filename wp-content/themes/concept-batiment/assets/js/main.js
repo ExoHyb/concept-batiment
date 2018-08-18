@@ -4,14 +4,11 @@
 
 		$('body').addClass('js');
 
-		// var height = window.innerHeight - 80;
-		// var maxHeight = height - 50;
-		// $('.header-home').css('height', + height +'px');
-		// $('.primary-image').css('max-height', + maxHeight +'px');
-
 		var img = document.getElementById('heightimage');
-		var height = img.clientHeight + 70;
-		$('.header-home').css('height', + height +'px');
+		if ( img !== null ) {
+			var height = img.clientHeight + 70;
+			$('.header-home').css('height', + height +'px');
+		}
 
 		// Animation hamburger
 		$('.hamburger').click(function() {
