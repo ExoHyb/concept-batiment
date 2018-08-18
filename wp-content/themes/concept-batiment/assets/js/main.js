@@ -5,34 +5,41 @@
 		$('body').addClass('js');
 
 		var img = document.getElementById('heightimage');
+
 		if ( img !== null ) {
 			var height = img.clientHeight + 70;
 			$('.header-home').css('height', + height +'px');
 		}
 
 		// Animation hamburger
-		$('.hamburger').click(function() {
-			$(this).toggleClass('active').parent().find('#primary-menu').slideToggle('medium');
-		});
+		if ($('.hamburger').length > 0) {
+			$('.hamburger').click(function() {
+				$(this).toggleClass('active').parent().find('#primary-menu').slideToggle('medium');
+			});
+		}
 
 		// Slick inspiration homepage
-		$('.wrapper-inspirations').slick({
-			dots: false,
-			speed: 500,
-			infinite: false,
-			arrows: true,
-			prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
-            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
-		});
+		if ($('.wrapper-inspirations').length > 0) {
+			$('.wrapper-inspirations').slick({
+				dots: false,
+				speed: 500,
+				infinite: false,
+				arrows: true,
+				prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
+	            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
+			});
+		}
 
 		// Slick clients homepage
-		$('.wrapper-clients').slick({
-			dots: false,
-			arrows: true,
-			prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
-            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
-			speed: 500,
-		});
+		if ($('.wrapper-clients').length > 0) {
+			$('.wrapper-clients').slick({
+				dots: false,
+				arrows: true,
+				prevArrow: '<span class="slickArrow slickArrow-prev"></span>',
+	            nextArrow: '<span class="slickArrow slickArrow-next"></span>',
+				speed: 500,
+			});
+		}
 
 		// Mobile
 		var breakpoint = 768;
