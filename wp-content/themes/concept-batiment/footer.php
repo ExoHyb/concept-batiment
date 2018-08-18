@@ -3,7 +3,9 @@
 
 	<footer id="colophon" role="contentinfo">
 		<div class="container">
+			<p class="title"><?php _e('Concept Batiment', 'twoobl'); ?></p>
 			<?php dynamic_sidebar('footer'); ?>
+			<p class="copyrights"><?php _e('Copyrights 2018 - Tous droits réservé') ?></p>
 		</div>
 	</footer>
 

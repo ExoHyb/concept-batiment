@@ -6933,6 +6933,58 @@ img.emoji {
   #sidebar .fb_iframe_widget span iframe[style] {
     width: 100% !important; }
 
+#colophon {
+  background-color: #2b2b2b;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  #colophon .title {
+    text-align: center;
+    color: #FFF;
+    font-size: 1.3rem;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    position: relative; }
+    #colophon .title:before {
+      content: '';
+      background: #FFF;
+      height: 2px;
+      width: 80px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%); }
+  #colophon .widget ul {
+    text-align: center;
+    list-style-type: none; }
+    #colophon .widget ul li {
+      display: inline-block; }
+      #colophon .widget ul li a {
+        color: #FFFFFF;
+        position: relative;
+        vertical-align: middle;
+        font-weight: 300;
+        padding-right: .7em;
+        padding-left: .7em;
+        transition: color .3s ease;
+        font-size: .85rem; }
+        #colophon .widget ul li a:after {
+          content: '';
+          background-color: rgba(255, 255, 255, 0.4);
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 100%; }
+        #colophon .widget ul li a:hover, #colophon .widget ul li a:active, #colophon .widget ul li a:focus {
+          text-decoration: none;
+          color: rgba(255, 255, 255, 0.5); }
+  #colophon .copyrights {
+    color: #FFF;
+    text-align: center;
+    font-size: .85rem;
+    padding-top: 2rem; }
+
 .fancybox-enabled {
   overflow: hidden; }
 
