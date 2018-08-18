@@ -6067,11 +6067,10 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #dee2e6 !important; } }
 
 #mobile-top {
-  background-color: #212529;
-  color: #ffffff;
-  padding: 0.5em 0;
-  font-size: 0.9em;
-  margin-bottom: 15px; }
+  background-color: #FFF;
+  color: #2B2B2B;
+  padding: 15px 0;
+  font-size: 0.9em; }
   #mobile-top a {
     color: inherit; }
 
@@ -6218,13 +6217,16 @@ a.text-dark:hover, a.text-dark:focus {
       #nav-main > div > ul > li:hover > ul {
         display: block; }
 
-header {
+header.header-home-desktop {
   position: relative;
   height: 40px;
   z-index: 40; }
-  header .container {
+  @media (max-width: 768px) {
+    header.header-home-desktop {
+      display: none; } }
+  header.header-home-desktop .container {
     position: relative; }
-  header .hamburger {
+  header.header-home-desktop .hamburger {
     position: absolute;
     z-index: 50;
     right: 0;
@@ -6232,29 +6234,29 @@ header {
     width: 40px;
     height: 40px;
     cursor: pointer; }
-    header .hamburger span {
+    header.header-home-desktop .hamburger span {
       position: absolute;
       background-color: #FFF;
       height: 2px;
       width: 25px;
       border-radius: 5px;
       right: 0; }
-      header .hamburger span:nth-child(1) {
+      header.header-home-desktop .hamburger span:nth-child(1) {
         top: 0; }
-      header .hamburger span:nth-child(2) {
+      header.header-home-desktop .hamburger span:nth-child(2) {
         top: 6px;
         width: 15px; }
-      header .hamburger span:nth-child(3) {
+      header.header-home-desktop .hamburger span:nth-child(3) {
         top: 12px;
         width: 20px; }
-    header .hamburger.active span {
+    header.header-home-desktop .hamburger.active span {
       background-color: #FFF; }
-      header .hamburger.active span:nth-child(1) {
+      header.header-home-desktop .hamburger.active span:nth-child(1) {
         transform: rotate(45deg);
         top: 5px; }
-      header .hamburger.active span:nth-child(2) {
+      header.header-home-desktop .hamburger.active span:nth-child(2) {
         display: none; }
-      header .hamburger.active span:nth-child(3) {
+      header.header-home-desktop .hamburger.active span:nth-child(3) {
         width: 25px;
         transform: rotate(-45deg);
         top: 5px; }
@@ -6783,7 +6785,8 @@ img.emoji {
   position: relative; }
   @media (max-width: 768px) {
     .clients {
-      padding-bottom: 0; } }
+      padding-bottom: 0;
+      overflow: hidden; } }
   .clients .h1 {
     color: #f8f9fa;
     margin-bottom: 20px; }

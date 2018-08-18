@@ -273,6 +273,7 @@
     position: relative;
     @media (max-width: 768px) {
         padding-bottom: 0;
+        overflow: hidden;
     }
     .h1 {
         color: $gray-100;
