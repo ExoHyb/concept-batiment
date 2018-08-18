@@ -6756,6 +6756,20 @@ img.emoji {
   .clients .h2 {
     margin-bottom: 20px;
     font-size: 1rem; }
+  .clients .slickArrow {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer; }
+    .clients .slickArrow.slickArrow-prev {
+      left: -100px;
+      background: url(../img/left-white.svg); }
+    .clients .slickArrow.slickArrow-next {
+      right: -100px;
+      background: url(../img/right-white.svg); }
   .clients .saflex {
     display: flex;
     align-items: center;

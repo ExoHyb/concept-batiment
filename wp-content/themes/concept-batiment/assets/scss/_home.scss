@@ -248,6 +248,23 @@
         margin-bottom: 20px;
         font-size: 1rem;
     }
+    .slickArrow {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      cursor: pointer;
+      &.slickArrow-prev {
+        left: -100px;
+        background: url(../img/left-white.svg);
+      }
+      &.slickArrow-next {
+        right: -100px;
+        background: url(../img/right-white.svg);
+      }
+    }
     .saflex {
         display: flex;
         align-items: center;
