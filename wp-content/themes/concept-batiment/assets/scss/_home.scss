@@ -6,6 +6,9 @@
     position: relative;
     overflow-y: hidden;
     margin-top: -40px;
+    @media (max-width: 768px) {
+        display: none;
+    }
     &:before {
         content: '';
         background: #FFF;
@@ -90,6 +93,9 @@
         bottom: 0;
         left: 0;
         right: 20px;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
     .wrapper-inspirations {
         position: relative;
@@ -131,6 +137,9 @@
                 width: 100%;
                 object-fit: cover;
                 object-position: center center;
+                @media (max-width: 768px) {
+                    max-height: 300px;
+                }
             }
             .wrapper-content {
                 position: absolute;
@@ -139,6 +148,9 @@
                 max-width: 50%;
                 width: 100%;
                 text-align: right;
+                @media (max-width: 768px) {
+                    max-width: 100%;
+                }
                 .title {
                     margin-bottom: 20px;
                 }
@@ -176,16 +188,24 @@
     position: relative;
     padding-top: 150px;
     padding-bottom: 150px;
+    @media (max-width: 768px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     .wrapper-about {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        max-width: 80%;
         margin: auto;
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 80%;
+        }
         .wrapper-content {
-            width: calc(100% - 280px);
             position: relative;
             z-index: 10;
+            @media (min-width: 768px) {
+                width: calc(100% - 280px);
+            }
             .h1 {
                 font-size: 4rem;
                 margin-bottom: 20px;
@@ -194,41 +214,52 @@
                 margin-bottom: 20px;
             }
             p:not(.title) {
-                font-size: .9em;
                 color: $gray-700;
                 position: relative;
-                padding-left: 100px;
-                padding-right: 20px;
-                &:before {
-                    content: '';
-                    background: $secondary;
-                    height: 2px;
-                    width: 80px;
-                    position: absolute;
-                    top: 10px;
-                    left: 0;
+                @media (max-width: 768px) {
+                    margin-bottom: 2em;
+                }
+                @media (min-width: 768px) {
+                    font-size: .9em;
+                    padding-left: 100px;
+                    padding-right: 20px;
+                    &:before {
+                        content: '';
+                        background: $secondary;
+                        height: 2px;
+                        width: 80px;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                    }
                 }
             }
         }
         .wrapper-image {
-            width: 280px;
             position: relative;
             z-index: 5;
-            &:before {
-                content: '';
-                background-color: #F3F3F3;
-                width: 260px;
-                height: 350px;
-                position: absolute;
-                top: 50px;
-                left: -260px;
+            @media (min-width: 768px) {
+                width: 280px;
+            }
+            @media (min-width: 768px) {
+                &:before {
+                    content: '';
+                    background-color: #F3F3F3;
+                    width: 260px;
+                    height: 350px;
+                    position: absolute;
+                    top: 50px;
+                    left: -260px;
+                }
             }
             img {
-                max-width: 280px;
-                width: 100%;
-                height: 530px;
                 object-fit: cover;
                 object-position: center center;
+                @media (min-width: 768px) {
+                    max-width: 280px;
+                    width: 100%;
+                    height: 530px;
+                }
             }
         }
     }
@@ -240,6 +271,9 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
     position: relative;
+    @media (max-width: 768px) {
+        padding-bottom: 0;
+    }
     .h1 {
         color: $gray-100;
         margin-bottom: 20px;
@@ -249,41 +283,45 @@
         font-size: 1rem;
     }
     .slickArrow {
-      height: 50px;
-      width: 50px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      cursor: pointer;
-      &.slickArrow-prev {
-        left: -100px;
-        background: url(../img/left-white.svg);
-      }
-      &.slickArrow-next {
-        right: -100px;
-        background: url(../img/right-white.svg);
-      }
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        cursor: pointer;
+        &.slickArrow-prev {
+            left: -100px;
+            background: url(../img/left-white.svg);
+        }
+        &.slickArrow-next {
+            right: -100px;
+            background: url(../img/right-white.svg);
+        }
     }
     .saflex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         p {
-            padding-left: 120px;
-            font-size: .8em;
             color: $gray-600;
             position: relative;
-            width: calc(100% - 250px);
             text-align: justify;
-            &:before {
-                content: '';
-                background: $gray-200;
-                height: 2px;
-                width: 100px;
-                position: absolute;
-                top: 8px;
-                left: 0;
+            @media (min-width: 768px) {
+                font-size: .8em;
+                padding-left: 120px;
+                width: calc(100% - 250px);
+                &:before {
+                    content: '';
+                    background: $gray-200;
+                    height: 2px;
+                    width: 100px;
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                }
             }
         }
         .image-client {
@@ -294,6 +332,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
         img {
             max-width: 150px;
@@ -315,15 +356,6 @@
         left: 0;
         z-index: 0;
     }
-    &:after {
-        content: '';
-        background: $secondary;
-        width: 20px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
     .title {
         color: #FFF;
         position: relative;
@@ -331,7 +363,10 @@
         margin: 20px;
     }
     .wrapper-prestations {
-        display: flex;
+        position: relative;
+        @media (min-width: 768px) {
+            display: flex;
+        }
         .item-prestation {
             width: 33.33%;
             text-align: center;
@@ -355,8 +390,10 @@
                     max-height: 350px;
                     height: 100%;
                     object-fit: cover;
-                    filter: grayscale(1);
                     transition-duration: .3s;
+                    @media (min-width: 768px) {
+                        filter: grayscale(1);
+                    }
                 }
             }
             a {
@@ -378,6 +415,41 @@
                 img {
                     filter: grayscale(0);
                 }
+            }
+        }
+    }
+}
+
+
+// TODO : replacer ce bloc mieux que çà après
+.slick-dots {
+    text-align: center;
+    position: relative;
+    bottom: -20px;
+    z-index: 26;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    > li {
+        display: inline-block;
+        margin: 0 1px;
+
+        button {
+            padding: 0;
+            margin:0;
+            width: 7px;
+            height: 7px;
+            border: 1px solid $secondary;
+            border-radius: 50px;
+            display: block;
+            font-size: 0;
+            background: #fff;
+            transition: all ease 0.3s;
+        }
+        &.slick-active {
+            button {
+                background: $secondary;
             }
         }
     }

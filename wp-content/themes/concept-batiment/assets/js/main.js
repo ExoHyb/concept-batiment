@@ -37,6 +37,20 @@
 			speed: 500,
 		});
 
+		// Mobile
+		var breakpoint = 768;
+
+		if($(document).width() < breakpoint) {
+			// Slider prestations only mobile
+			$('.wrapper-prestations').slick({
+				arrows: false,
+				dots: true,
+				infinite: false,
+				slidesToShow: 1,
+				slidesToScroll: 1
+			});
+		}
+
 		/********************************************
 		 * 		Mmenu navigation menu
 		 ********************************************/

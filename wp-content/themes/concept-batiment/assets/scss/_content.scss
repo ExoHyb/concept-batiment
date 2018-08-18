@@ -12,22 +12,24 @@ body {
 
 #playground {
 	position: relative;
-	&:before,
-	&:after {
-		content: '';
-		width: 20px;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		z-index: 20;
-	}
-	&:before {
-		background: #FFF;
-		left: 0;
-	}
-	&:after {
-		background: $secondary;
-		right: 0;
+	@media (min-width: 768px) {
+		&:before,
+		&:after {
+			content: '';
+			width: 20px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			z-index: 20;
+		}
+		&:before {
+			background: #FFF;
+			left: 0;
+		}
+		&:after {
+			background: $secondary;
+			right: 0;
+		}
 	}
 }
 
