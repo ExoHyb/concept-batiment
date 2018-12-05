@@ -45,8 +45,8 @@ $primaryImage = get_field('first-image', 'option');
 			<div class="wrapper-about">
 				<?php while (have_posts()) : the_post(); ?>
 					<div class="wrapper-content">
-						<p class="title h2 gradient-h2"><?php _e('About us', 'twoobl'); ?></p>
-						<p class="title h1"><?php _e('We create things.', 'twoobl'); ?></p>
+						<p class="title h2 gradient-h2"><?php _e('Un projet d\'avenir ?', 'twoobl'); ?></p>
+						<p class="title h1"><?php _e('Nous réalisons vos rêves.', 'twoobl'); ?></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="wrapper-image">
@@ -80,38 +80,14 @@ $primaryImage = get_field('first-image', 'option');
 			?>
 		</div>
 	</section>
-	<section class="prestations">
-		<div class="container">
-			<h2 class="title"><?php _e('Nos prestations', 'twoobl'); ?></h2>
-			<div class="wrapper-prestations">
-				<?php
-				$the_query = new WP_Query( array('post_type' => 'page', 'posts_per_page' => -1));
-				$urls = get_field('prestations', 'options');
-				if ( $the_query->have_posts() ) {
-					while ( $the_query->have_posts() ) : $the_query->the_post();
-						if ($urls) {
-							foreach ($urls as $url) {
-								if ($url == get_permalink()) {
-									echo '<article class="item-prestation">';
-										echo '<a href="' . get_the_permalink() . '">';
-											echo '<div class="wrapper-image">';
-												the_post_thumbnail();
-											echo '</div>';
-											echo '<h2>' . get_the_title() . '</h2>';
-											echo the_excerpt();
-										echo '</a>';
-									echo '</article>';
-								}
-							}
-						}
-					endwhile;
-				}
-				wp_reset_postdata();
-				?>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part('templates/prestations'); ?>
 </div>
 
 <?php
 get_footer();
+
+?>
+
+<?php
+$the_query = new WP_Query( 'category_name=musiques' );
+?>

@@ -6917,7 +6917,7 @@ img.emoji {
         text-decoration: none; }
       .prestations .wrapper-prestations .item-prestation .read-more, .prestations .wrapper-prestations .item-prestation .btn, .prestations .wrapper-prestations .item-prestation .search-form .search-submit, .search-form .prestations .wrapper-prestations .item-prestation .search-submit {
         display: none !important; }
-      .prestations .wrapper-prestations .item-prestation h2 {
+      .prestations .wrapper-prestations .item-prestation h3 {
         font-size: 1rem; }
       .prestations .wrapper-prestations .item-prestation p {
         font-size: .9rem; }
@@ -7059,6 +7059,8 @@ img.emoji {
     list-style-type: none; }
     #colophon .widget ul li {
       display: inline-block; }
+      #colophon .widget ul li .sub-menu {
+        display: none; }
       #colophon .widget ul li a {
         color: #FFFFFF;
         position: relative;
@@ -7073,13 +7075,15 @@ img.emoji {
           background-color: rgba(255, 255, 255, 0.4);
           position: absolute;
           top: 50%;
-          right: 0;
+          right: -2px;
           transform: translateY(-50%);
           width: 1px;
           height: 100%; }
         #colophon .widget ul li a:hover, #colophon .widget ul li a:active, #colophon .widget ul li a:focus {
           text-decoration: none;
           color: rgba(255, 255, 255, 0.5); }
+      #colophon .widget ul li:last-child a:after {
+        display: none; }
   #colophon .copyrights {
     color: #FFF;
     text-align: center;

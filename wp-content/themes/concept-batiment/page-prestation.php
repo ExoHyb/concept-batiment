@@ -21,5 +21,7 @@ Template Name: Prestation
     </div>
 </div>
 
+<?php get_template_part('templates/prestations'); ?>
+
 <?php
 get_footer();
